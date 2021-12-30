@@ -1,24 +1,41 @@
 # my-trello_01
 
-## Project setup
-```
-npm install
-```
+## 1-1 Vue.jsとは
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+データとDOMを同期し続けるリアクティブなデータバインディング
 
-### Compiles and minifies for production
-```
-npm run build
-```
+コンポーネント間でのデータの受け渡し
 
-### Lints and fixes files
-```
-npm run lint
-```
+propsで親から子へデータを受け渡し、$emitで子から親にデータ送る
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## 1-2 Vuexの概要
+
+### Vuex（ビューエックス）
+コンポーネントが共有するデータの状態を、グローバルに管理
+どのコンポーネントも自立して管理されたデータの状態へアクセスできる
+
+### Storeの4つの機能
+- state: アプリケーション全体のデータの状態を管理（現在のデータの状態を確認する、特定のデータの状態を見つけることができる）
+
+- mutations: stateの更新だけを行う（データの変更のデバッグが容易になるメリットがある）
+
+- actions: mutationsの呼び出し（非同期なAPI通信もここで行う）
+
+- getters: stateの値を算出したものを返す。computedと同様の動き。
+
+### Vuex自分まとめ（カタカナで書きます）（まちがってるかも）：
+ビューコンポーネントがアクションをディスパッチする
+
+と
+
+アクションが実行されて、
+
+ミューテーションをコミット（実行）する
+
+つまりステートが更新される
+
+ゲッターはステートを算出した値をビューコンポーネントに返す
+
+
+Vuexは状態管理に関わる概念を定義、分割し、特定のルールを定めることで、コードの構造と保守性をアップさせる。
+
